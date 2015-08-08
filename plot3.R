@@ -5,7 +5,7 @@ unzip(zipfile = "./epc/data.zip", exdir = "./epc")
 ## Read data into R
 data <- read.table(header=TRUE, sep=";", stringsAsFactors=FALSE,
                    dec=".", na.strings="?",
-                   file="C://users/owner/desktop/rdir/rdir/epc/household_power_consumption.txt")
+                   file="./epc/household_power_consumption.txt")
 ## Subset to the desired date range
 smalldata <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
 ## Convert dates and times to posix
