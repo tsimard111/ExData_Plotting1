@@ -8,6 +8,7 @@ data <- read.table(header=TRUE, sep=";", stringsAsFactors=FALSE,
                    file="C://users/owner/desktop/rdir/rdir/epc/household_power_consumption.txt")
 ## Subset to the desired date range
 smalldata <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
+## Convert dates and times to posix
 datetime <- strptime(paste(smalldata$Date, smalldata$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 ## Launch png graphics device
 png("plot3.png", width=480, height=480)
